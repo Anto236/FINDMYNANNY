@@ -2,6 +2,7 @@
 
 import models
 from models.base_model import BaseModel, Base
+
 from os import getenv
 import sqlalchemy
 from sqlalchemy import Column, String
@@ -19,7 +20,9 @@ class User(BaseModel, Base):
     last_name = Column(String(128), nullable=True)
     role = Column(String(128), nullable=False)
     families = relationship("family", backref="user")
-    reviews = relationship("Review", backref="user")
+    nannies = relationship("nanny", backref="user")
+
+
 
     def __init__(self, *args, **kwargs):
         """Initializes user"""

@@ -16,7 +16,7 @@ class Review(BaseModel, Base):
     nanny_id = Column(String(60), ForeignKey('nannies.id'), nullable=False)
     rating = Column(String(10), nullable=False)
     comments = Column(String(1024), nullable=False)
-    review_date = Column(String(60), nullable=False)
+    review_date = Column(DateTime, nullable=False)
 
     def __init__(self, *args, **kwargs):
         """Initializes review"""
