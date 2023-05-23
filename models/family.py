@@ -3,18 +3,18 @@
 
 import models
 from models.base_model import BaseModel, Base
-from models.user import User
 from models.booking import Booking
 from os import getenv
 import sqlalchemy
+from sqlalchemy.orm import relationship
 from sqlalchemy import Column, String, ForeignKey
+from hashlib import md5
 
 
 class Family(BaseModel, Base):
     """Representation of a family"""
 
     __tablename__ = 'families'
-    user_id = Column(String(60), ForeignKey('users.id'), nullable=False)
     address = Column(String(128), nullable=False)
     contact_number = Column(String(20), nullable=False)
     preferred_payment_method = Column(String(128), nullable=False)
@@ -48,3 +48,9 @@ class Family(BaseModel, Base):
 
         review.save()
         return review
+
+    def __setattr__(self, name, value):
+        """Sets a password with md5 encryption"""
+        if name == "password":
+            value = md5(value.encode()).hexdigest()
+        super().__setattr__(name, value)

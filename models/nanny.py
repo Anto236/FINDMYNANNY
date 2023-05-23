@@ -7,13 +7,14 @@ import sqlalchemy
 from sqlalchemy import Column, String, ForeignKey
 from models.booking import Booking
 from models.city import City
+from sqlalchemy.orm import relationship
+from hashlib import md5
 
 
 class Nanny(BaseModel, Base):
     """Representation of a nanny"""
 
     __tablename__ = 'nannies'
-    user_id = Column(String(60), ForeignKey('users.id'), nullable=False)
     address = Column(String(128), nullable=False)
     contact_number = Column(String(20), nullable=False)
     hourly_rate = Column(String(128), nullable=False)
@@ -34,3 +35,10 @@ class Nanny(BaseModel, Base):
         """Rejects the specified booking"""
         booking.status = 'rejected'
         booking.save()
+
+
+    def __setattr__(self, name, value):
+        """Sets a password with md5 encryption"""
+        if name == "password":
+            value = md5(value.encode()).hexdigest()
+        super().__setattr__(name, value)
