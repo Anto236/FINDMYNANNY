@@ -15,6 +15,10 @@ class Family(BaseModel, Base):
     """Representation of a family"""
 
     __tablename__ = 'families'
+    email = Column(String(128), nullable=False)
+    password = Column(String(128), nullable=False)
+    first_name = Column(String(128), nullable=True)
+    last_name = Column(String(128), nullable=True)
     address = Column(String(128), nullable=False)
     contact_number = Column(String(20), nullable=False)
     preferred_payment_method = Column(String(128), nullable=False)

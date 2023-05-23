@@ -15,6 +15,10 @@ class Nanny(BaseModel, Base):
     """Representation of a nanny"""
 
     __tablename__ = 'nannies'
+    email = Column(String(128), nullable=False)
+    password = Column(String(128), nullable=False)
+    first_name = Column(String(128), nullable=True)
+    last_name = Column(String(128), nullable=True)
     address = Column(String(128), nullable=False)
     contact_number = Column(String(20), nullable=False)
     hourly_rate = Column(String(128), nullable=False)
@@ -35,7 +39,6 @@ class Nanny(BaseModel, Base):
         """Rejects the specified booking"""
         booking.status = 'rejected'
         booking.save()
-
 
     def __setattr__(self, name, value):
         """Sets a password with md5 encryption"""
