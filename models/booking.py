@@ -1,24 +1,27 @@
 #!/usr/bin/python
-""" holds class jobs"""
+""" holds class Booking"""
 import models
 from models.base_model import BaseModel, Base
+from models.family import Family
+from models.nanny import Nanny
 from os import getenv
 import sqlalchemy
 from sqlalchemy import Column, String, ForeignKey
+from sqlalchemy_utils import Enum
 
 
-class Job(BaseModel, Base):
-    """Representation of a job posting"""
+class Booking(BaseModel, Base):
+    """Representation of a booking"""
 
-    __tablename__ = 'jobs'
-    job_id = Column(String(60), primary_key=True)
+    __tablename__ = 'Bookings'
     family_id = Column(String(60), ForeignKey('families.id'), nullable=False)
     nanny_id = Column(String(60), ForeignKey('nannies.id'), nullable=False)
     start_date = Column(String(60), nullable=False)
     end_date = Column(String(60), nullable=False)
     job_description = Column(String(1024), nullable=False)
-    is_accepted = Column(String(10), nullable=False)
+    status = Column(Enum('pending', 'accepted', 'rejected'),
+                    nullable=False, default='pending')
 
     def __init__(self, *args, **kwargs):
-        """Initializes job"""
+        """Initializes booking"""
         super().__init__(*args, **kwargs)
