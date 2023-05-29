@@ -3,7 +3,6 @@
 
 import models
 from models.base_model import BaseModel, Base
-from models.booking import Booking
 from os import getenv
 import sqlalchemy
 from sqlalchemy.orm import relationship
@@ -33,6 +32,7 @@ class Family(BaseModel, Base):
         Creates a booking with the specified nanny,
         dates, and job description
         """
+        from models.booking import Booking
         booking = Booking(start_date=start_date, end_date=end_date,
                           family=self, nanny=nanny,
                           job_description=job_description)
@@ -41,6 +41,7 @@ class Family(BaseModel, Base):
 
     def create_review(self, nanny, rating, comments, review_date):
         """Creates a review for the specified nanny"""
+        from models.review import Review
         review = Review(family=self, nanny=nanny, rating=rating,
                         comments=None, review_date=None)
 

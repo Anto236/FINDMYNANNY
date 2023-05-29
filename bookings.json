@@ -1,0 +1,37 @@
+[
+  {
+    "family_id": "1",
+    "nanny_id": "1",
+    "start_date": "2023-06-01",
+    "end_date": "2023-06-05",
+    "job_description": "Babysitting for 2 children"
+  },
+  {
+    "family_id": "2",
+    "nanny_id": "2",
+    "start_date": "2023-06-10",
+    "end_date": "2023-06-15",
+    "job_description": "House cleaning and cooking"
+  },
+  {
+    "family_id": "3",
+    "nanny_id": "3",
+    "start_date": "2023-07-01",
+    "end_date": "2023-07-10",
+    "job_description": "Dog walking and pet care"
+  },
+  {
+    "family_id": "4",
+    "nanny_id": "4",
+    "start_date": "2023-08-15",
+    "end_date": "2023-08-20",
+    "job_description": "Tutoring for math and science subjects"
+  },
+  {
+    "family_id": "5",
+    "nanny_id": "5",
+    "start_date": "2023-09-05",
+    "end_date": "2023-09-10",
+    "job_description": "After-school care for 3 kids"
+  }
+]

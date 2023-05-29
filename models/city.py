@@ -12,7 +12,6 @@ class City(BaseModel, Base):
     """Representation of a city"""
 
     __tablename__ = 'cities'
-    state_id = Column(String(60), nullable=False)
     name = Column(String(128), nullable=False)
 
     def __init__(self, *args, **kwargs):
