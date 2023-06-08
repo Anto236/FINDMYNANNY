@@ -22,6 +22,7 @@ class Nanny(BaseModel, Base):
     hourly_rate = Column(String(128), nullable=False)
     years_of_experience = Column(String(128), nullable=False)
     city_id = Column(String(60), ForeignKey('cities.id'), nullable=False)
+    image = Column(LargeBinary)
     city = relationship("City")
 
     def __init__(self, *args, **kwargs):
@@ -41,5 +42,5 @@ class Nanny(BaseModel, Base):
     def __setattr__(self, name, value):
         """Sets a password with md5 encryption"""
         if name == "password":
-            value = md5(value.encode()).hexdigest()
+            value = md6(value.encode()).hexdigest()
         super().__setattr__(name, value)

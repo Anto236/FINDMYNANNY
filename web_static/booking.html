@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>FINDMYNANNY - Booking</title>
+    <link rel="stylesheet" type="text/css" href="styles/common.css" />
+    <link rel="stylesheet" type="text/css" href="styles/header.css" />
+    <link rel="stylesheet" type="text/css" href="styles/footer.css" />
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo">
+        </div>
+    </header>
+
+    <section class="booking-form">
+        <h2>Book a Nanny</h2>
+        <form action="booking.php" method="POST">
+            <label for="nanny_id">Nanny ID:</label>
+            <input type="text" id="nanny_id" name="nanny_id" required>
+
+            <label for="start_date">Start Date:</label>
+            <input type="date" id="start_date" name="start_date" required>
+
+            <label for="end_date">End Date:</label>
+            <input type="date" id="end_date" name="end_date" required>
+
+            <label for="job_description">Job Description:</label>
+            <textarea id="job_description" name="job_description" rows="4" cols="50" required></textarea>
+
+            <button type="submit">Book Now</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="social-icons">
+            <button>
+                <img src="images/twitter.png" alt="Twitter" width="30" height="30">
+            </button>
+            <button>
+                <img src="images/facebook.png" alt="Facebook" width="30" height="30">
+            </button>
+            <button>
+                <img src="images/instagram.png" alt="Instagram" width="30" height="30">
+            </button>
+        </div>
+        <p>© FINDMYNANNY. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>FINDMYNANNY</title>
+    <link rel="stylesheet" type="text/css" href="styles/common.css" />
+    <link rel="stylesheet" type="text/css" href="styles/header.css" />
+    <link rel="stylesheet" type="text/css" href="styles/footer.css" />
+    <link rel="stylesheet" type="text/css" href="styles/login.css" />
+
+</head>
+
+<body>
+    <header>
+        </div>
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo">
+        </div>
+    </header>
+    <div class="login_container">
+        <section class="login-section">
+            <form action="login.php" method="POST">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <label for="role">Role:</label>
+                <select id="role" name="role">
+                    <option value="nanny">Nanny</option>
+                    <option value="family">Family</option>
+                </select>
+
+                <button type="submit">Login</button>
+            </form>
+            <button type="submit">
+                <a href="index.html">Back to Home Page</a>
+            </button>
+        </section>
+    </div>
+    <footer>
+        <div class="social-icons">
+            <button>
+                <img src="images/twitter.png" alt="Twitter" width="30" height="30">
+            </button>
+            <button>
+                <img src="images/facebook.png" alt="Facebook" width="30" height="30">
+            </button>
+            <button>
+                <img src="images/instagram.png" alt="Instagram" width="30" height="30">
+            </button>
+        </div>
+        <p>© FINDMYNANNY. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>

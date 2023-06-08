@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>FINDMYNANNY</title>
+    <link rel="stylesheet" type="text/css" href="styles/common.css" />
+    <link rel="stylesheet" type="text/css" href="styles/header.css" />
+    <link rel="stylesheet" type="text/css" href="styles/footer.css" />
+    <link rel="stylesheet" type="text/css" href="styles/fam_reg.css" />
+
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo">
+        </div>
+    </header>
+    <div class="registration_container">
+        <section class="profile-creation">
+            <h2>Family Profile Creation</h2>
+            <form action="family_registration.py" method="POST">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name">
+
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name">
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="contact_number">Contact Number:</label>
+                <input type="text" id="contact_number" name="contact_number" required>
+
+                <label for="fileUpload">Upload Image:</label>
+                <input type="file" id="fileUpload" name="fileUpload" required>
+
+                <input type="hidden" id="role" name="role" value="family">
+
+                <label for="preferred_payment_method">Preferred Payment Method:</label>
+                <input type="text" id="preferred_payment_method" name="preferred_payment_method" required>
+
+                <button type="submit">Create Profile</button>
+                <button type="submit">
+                    <a href="index.html"> Back to Home Page </a>
+                </button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <div class="social-icons">
+            <button>
+                <img src="images/twitter.png" alt="Twitter" width="30" height="30">
+            </button>
+            <button>
+                <img src="images/facebook.png" alt="Facebook" width="30" height="30">
+            </button>
+            <button>
+                <img src="images/instagram.png" alt="Instagram" width="30" height="30">
+            </button>
+        </div>
+        <p>© FINDMYNANNY. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>
