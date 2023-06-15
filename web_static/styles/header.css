@@ -1,0 +1,101 @@
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    margin-top: 0;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.logo {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.logo img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.menu-button {
+    border: none;
+    background-color: transparent;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.login-button,
+.signup-button {
+    border: none;
+    background-color: white;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+
+.menu-button img {
+    width: 40px;
+    height: 40px;
+}
+
+.login-button,
+.signup-button {
+    font-weight: bold;
+}
+
+.popover {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+.popover a {
+    display: block;
+    margin-bottom: 5px;
+}

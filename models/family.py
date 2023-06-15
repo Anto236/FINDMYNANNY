@@ -22,6 +22,8 @@ class Family(BaseModel, Base):
     contact_number = Column(String(20), nullable=False)
     preferred_payment_method = Column(String(128), nullable=False)
     reviews = relationship("Review")
+    image = Column(LargeBinary)
+
 
     def __init__(self, *args, **kwargs):
         """Initializes family"""

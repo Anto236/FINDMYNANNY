@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>FINDMYNANNY</title>
+    <link rel="stylesheet" type="text/css" href="styles/common.css" />
+    <link rel="stylesheet" type="text/css" href="styles/filter.css" />
+    <link rel="stylesheet" type="text/css" href="styles/footer.css" />
+    <link rel="stylesheet" type="text/css" href="styles/header.css" />
+    <link rel="stylesheet" type="text/css" href="styles/family_booking.css" />
+    <link rel="stylesheet" type="text/css" href="styles/nanny_reg.css" />
+
+    <script src="scripts/scripts.js"></script>
+</head>
+
+<body>
+    <header>
+        <!-- <div class="buttons">
+            <button class="menu-button">
+                <img src="images/menu.png" alt="Menu">
+            </button>
+        </div> -->
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo">
+        </div>
+        <div class="buttons">
+            <button class="login-button">
+                <a href="index.html">Log Out</a>
+            </button>
+        </div>
+
+    </header>
+
+
+    <div class="container">
+        <section class="filters">
+            <div class="homepage-button">
+                <a href="family_page.html">HOME</a>
+            </div>
+
+            <div class="family-button">
+                <a href="family_update_profile.html">FAMILY</a>
+            </div>
+
+
+            <div class="booking-button">
+                <a href="family_bookingpage.html">BOOK</a>
+            </div>
+
+            <div class="review-button">
+                <a href="family_review.html">REVIEW</a>
+            </div>
+
+            <input type="text" placeholder="Search for a nanny">
+            <button class="search-button">
+                <img src="images/search-icon.png" alt="Search">
+            </button>
+
+        </section>
+
+        <div class="registration_container" style="margin-bottom: 20px;">
+            <section class=" booking-form">
+                <h2>Create Booking</h2>
+                <form action="/create_booking" method="post">
+                    <label for="start_date">Start Date:</label>
+                    <input type="date" id="start_date" name="start_date" required>
+
+                    <label for="end_date">End Date:</label>
+                    <input type="date" id="end_date" name="end_date" required>
+
+                    <label for="job_description">Job Description:</label>
+                    <textarea id="job_description" name="job_description" required></textarea>
+
+                    <button type="submit">Create Booking</button>
+                </form>
+            </section>
+        </div>
+
+        <div class="registration_container">
+            <section class="booking-creation">
+                <h2>Booking Details</h2>
+                {% if booking %}
+                <ul>
+                    <li>Start Date: <span>{{ booking.start_date }}</span></li>
+                    <li>End Date: <span>{{ booking.end_date }}</span></li>
+                    <li>Job Description: <span>{{ booking.job_description }}</span></li>
+                    <li>Status: <span>{{ booking.status }}</span></li>
+                </ul>
+
+                <div class="buttons">
+                    {% if booking.status == 'accepted' %}
+                    <p>Booking Accepted</p>
+                    {% elif booking.status == 'rejected' %}
+                    <p>Booking Rejected</p>
+                    {% else %}
+                    <p>Booking Pending</p>
+                    <form action="/accept" method="post">
+                        <button type="submit" id="accept_button">Accept</button>
+                    </form>
+                    <form action="/reject" method="post">
+                        <button type="submit" id="reject_button">Reject</button>
+                    </form>
+                    {% endif %}
+                </div>
+                {% else %}
+                <p>No Current Bookings</p>
+                {% endif %}
+            </section>
+        </div>
+
+
+        <!-- Your page content here -->
+    </div>
+    <footer>
+        <div class="social-icons">
+            <button>
+                <img src="images/twitter.png" alt="Twitter" width="30" height="30">
+            </button>
+            <button>
+                <img src="images/facebook.png" alt="Facebook" width="30" height="30">
+            </button>
+            <button>
+                <img src="images/instagram.png" alt="Instagram" width="30" height="30">
+            </button>
+        </div>
+        <p>© FINDMYNANNY. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>
